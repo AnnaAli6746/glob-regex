@@ -1,6 +1,6 @@
 {
   "name": "glob-regex",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Convert glob patterns to anchored regular expressions.",
   "type": "module",
   "main": "src/index.js",
