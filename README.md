@@ -25,3 +25,10 @@ Patterns that use unsupported syntax are treated as literal text rather than gue
 `**` is opt-in via `{ globstar: true }`. Without that option, `**` behaves like two
 consecutive `*` patterns, which matches only within a single path segment. This avoids
 surprising cross-directory matches when callers expect plain `*` semantics.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
